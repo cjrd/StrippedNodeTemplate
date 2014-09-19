@@ -1,0 +1,148 @@
+@import "lib/bootstrap/bootstrap";
+
+
+// Colors
+// ------------------------
+
+@color-primary-2: #505061;	/* Main Primary color */
+@color-primary-0: #8E8E9B;
+@color-primary-1: #6B6B7C;
+@color-primary-3: #333341;
+@color-primary-4: #1E1E32;
+
+@gray-lighter: @color-primary-0;
+@gray-light: @color-primary-1;
+@gray: @color-primary-2;
+@gray-dark: @color-primary-3;
+@gray-darker: @color-primary-4;
+
+@brand-primary: #9dc1e0;
+@brand-success: #729dbf;
+@brand-warning: #c8a4b5;
+@brand-danger: #f23b1c;
+@brand-info: #729dbf;
+
+
+
+// Scaffolding
+// -------------------------
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  padding-top: 50px;
+  margin-bottom: 75px;
+  font-size: 13pt;
+  color: @gray;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+
+p,
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+// Navbar
+// -------------------------
+
+@navbar-height: 30px;
+.navbar-nav img {
+  width: 30px;
+  height: 30px;
+  margin: -15px 15px -15px;
+}
+.navbar-default {
+  margin-top: -30px;
+  background-color: transparent;
+  border: none;
+}
+
+.navbar-header button.navbar-toggle {
+  margin-top: -25px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: @color-primary-0;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: @color-primary-2;
+}
+// Alerts
+// -------------------------
+
+.alert {
+  margin-top: 10px;
+}
+
+// Bad vertical spacing (presentational logic)
+.top-space2 {
+  margin-top: 2em;
+}
+.top-space15 {
+  margin-top: 1.5em;
+}
+
+.top-space1 {
+  margin-top: 1em;
+}
+
+
+.bottom-space2 {
+  margin-bottom: 2em;
+}
+.bottom-space15 {
+  margin-bottom: 1.5em;
+}
+.bottom-space1 {
+  margin-bottom: 1em;
+}
+
+// Thumbnails
+// -------------------------
+
+.thumbnail {
+  padding: 0;
+  border-radius: 0;
+  box-shadow: 0 0 5px #ccc, inset 0 0 0 #000;
+}
+
+// Font Icons
+// -------------------------
+
+.fa,
+[class^='ion-'] {
+  margin-right: 6px;
+}
+
+// Links
+a {
+  color: #639cce;
+}
+
+// FIXES
+
+.container {
+  padding: 0;
+}
+
+.navbar {
+   font-family: "Balthazar", 'Helvetica', 'Arial', sans-serif;
+}
+
+@media only screen
+and (max-width: 700px) {
+  body {
+  padding: 50px 20px;
+  }
+
+}
