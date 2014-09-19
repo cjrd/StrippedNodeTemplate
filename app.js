@@ -25,6 +25,7 @@ var connectAssets = require('connect-assets');
 
 var landingController = require('./controllers/landing');
 var subscribeController = require('./controllers/subscribe');
+var userController = require('./controllers/user');
 
 /**
  * API keys and Passport configuration.
@@ -110,6 +111,16 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 app.get('/', landingController.index);
 app.get('/subscribe', subscribeController.getSubscribe);
 app.post('/subscribe', subscribeController.postSubscribe);
+app.get('/login', userController.getLogin);
+app.post('/login', userController.postLogin);
+app.get('/logout', userController.logout);
+app.get('/forgot', userController.getForgot);
+app.post('/forgot', userController.postForgot);
+app.get('/reset/:token', userController.getReset);
+app.post('/reset/:token', userController.postReset);
+app.get('/signup', userController.getSignup);
+app.post('/signup', userController.postSignup);
+
 
 /**
  * 500 Error Handler.

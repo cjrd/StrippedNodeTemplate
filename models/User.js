@@ -5,9 +5,8 @@ var userSchema = new mongoose.Schema({
   profile: {
     name: {
       type: String,
-      default: "TenLeaves Friend"
+      default: "Friend"
     },
-    interests: [String]
   },
   personalKey: String
 });

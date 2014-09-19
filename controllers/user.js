@@ -4,7 +4,6 @@ var crypto = require('crypto');
 var nodemailer = require('nodemailer');
 var passport = require('passport');
 var User = require('../models/User');
-var PreUser = require('../models/PreUser');
 var secrets = require('../config/secrets');
 var mailUtils = require("../utils/mail");
 
@@ -62,40 +61,6 @@ exports.logout = function(req, res) {
   res.redirect('/');
 };
 
-
-/**
- * Post /
- * Pre beta email signup page.
- */
-
-exports.postPreBeta = function(req, res) {
-  var preuser = new PreUser({
-    email: req.body.email
-  });
-
-  PreUser.findOne({ email: req.body.email }, function(err, existingUser) {
-    if (existingUser) {
-      req.flash('errors', { msg: 'We have already added this email to the list.' });
-      return res.redirect('/');
-    } else {
-      preuser.save();
-      var mailOptions = {
-        to: "colorado.j.reed@gmail.com",
-        from: req.body.email,
-        subject: "Deep Leaf Analysis Interest",
-        text: req.body.email
-      };
-      mailUtils.sendMail(mailOptions, function(err) {
-        if (err) {
-          req.flash('errors', { msg: err.message });
-          return res.redirect('/');
-        }
-        req.flash('success', { msg: 'Thanks! We will send you an access code soon!' });
-        res.redirect('/');
-      });
-    }
-  });
-};
 
 /**
  * GET /signup
