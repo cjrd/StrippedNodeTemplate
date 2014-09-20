@@ -15,12 +15,13 @@ html
     block extra-css
 
   body
-    .container
-      // block navbar
+    block body
+      .container
+        // block navbar
         // include partials/navbar
-      include partials/flash
-      block content
+        include partials/flash
+        block content
 
-
-    != js('application')
-    block extra-js
+    block js
+      != js('application')
+      block extra-js

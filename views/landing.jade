@@ -2,6 +2,9 @@ extends layout
 block extra-css
   != css("landing")
 
-block content
+block body
+  h1 Hello ASYNC Template
 
-  h1 Hello CJRD Template
+block extra-js
+  js(src="https://cdn.socket.io/socket.io-1.1.0.js")
+  != js("landing")

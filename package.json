@@ -41,7 +41,8 @@
     "uglify-js": "^2.4.14",
     "validator": "^3.13.0",
     "yui": "^3.17.1",
-    "iconv-lite": "~0.4.4"
+    "iconv-lite": "~0.4.4",
+    "socket.io": "~1.1.0"
   },
   "devDependencies": {
     "blessed": "0.0.33",

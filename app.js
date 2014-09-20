@@ -38,6 +38,8 @@ var secrets = require('./config/secrets');
  */
 
 var app = express();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
 /**
  * Connect to MongoDB.
@@ -132,8 +134,18 @@ app.use(errorHandler());
  * Start Express server.
  */
 
-app.listen(app.get('port'), function() {
+server.listen(app.get('port'), function() {
   console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
 });
+
+
+// Socket IO
+io.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});
+
 
 module.exports = app;
